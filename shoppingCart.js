@@ -15,9 +15,10 @@ $( document ).ready(function() {
     updatedQty = window.localStorage.getItem('cartQty');
 
     if (updatedQty == undefined && shoppingCartItems == undefined){
-        updatedQty = 0;
+        //updatedQty = 0;
         updatedQty = parseInt(updatedQty);
         shoppingCartItems = [];
+        $('#cartNumber').empty();
         $('#cartNumber').append(updatedQty);
     }else if (updatedQty != undefined  && shoppingCartItems != undefined){
         updatedQty = parseInt(updatedQty);
@@ -31,7 +32,6 @@ $( document ).ready(function() {
         cost = newShoppingCart[i]._cost;
         cost = parseInt(cost);
         total += cost;
-        console.log(total);
         $("#subtotalOutput").text("$" + total + ".00");
         let endTotal = total + shippingTax;
         $("#totalOutput").text("$" + endTotal);
@@ -69,20 +69,23 @@ $( document ).ready(function() {
         //captures qty to delete from cart display
         for(let i=0; i<newShoppingCart.length; i++) {
             if (i == toDelete) {
+                console.log(toDelete);
                 let qtyToDelete = newShoppingCart[i]._qty
                 qtyToDelete = parseInt(qtyToDelete);
+                console.log(qtyToDelete);
                 updatedQty -= qtyToDelete;
                 window.localStorage.setItem('cartQty', updatedQty);
+                newShoppingCart.splice(toDelete,1);
             }
         }
         //Removes Item
-        newShoppingCart.splice($.inArray(toDelete,newShoppingCart), 1);
+
 
         //updates local storage
         newShoppingCart = JSON.stringify(newShoppingCart);
         window.localStorage.setItem('cart', newShoppingCart);
         shoppingCartItems = window.localStorage.getItem('cart');
-        window.location.reload();
+        //window.location.reload();
 
     });
 
