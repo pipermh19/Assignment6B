@@ -85,7 +85,7 @@ $( document ).ready(function() {
         newShoppingCart = JSON.stringify(newShoppingCart);
         window.localStorage.setItem('cart', newShoppingCart);
         shoppingCartItems = window.localStorage.getItem('cart');
-        //window.location.reload();
+        window.location.reload();
 
     });
 
