@@ -1,0 +1,79 @@
+/* Cart Styling */
+#cartTitle{
+    margin-bottom: 2rem;
+}
+#cartPageContent{
+    margin: auto;
+    margin-top: 2rem;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+.cartPositionContainer{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+/* porduct Image */
+#imageContainer{
+    display: flex;
+    height: auto;
+    justify-content: center;
+    margin-right: 2rem;
+    width: 50%;
+}
+.itemsPositionContainer{
+    display: flex;
+    width: 100%;
+    background-color: #8fd3e37a;
+    padding: 1rem;
+}
+/* Labels and Values */
+.itemsContainer{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+.itemList{
+    display: flex;
+    flex-direction: column;
+}
+.itemImageDiv{
+    width: 20%;
+    margin-right: 2rem;
+}
+.itemImageDiv img{
+    width: 100%;
+}
+.itemDiv{
+    display: flex;
+    width: 100%;
+}
+.itemDetailsDiv{
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+}
+.right{
+    text-align: right;
+}
+.totalContainer{
+    display: flex;
+    width: 20%;
+    justify-content: space-around;
+}
+/* Recommendation Area */
+#recommendations{
+    display: flex;
+    flex-direction: column;
+}
+#recImgCon{
+    margin-top: 1rem;
+    display: flex;
+}
+.recImage{
+    width: 10%;
+    margin-right: 2rem;
+    box-shadow: 12px 10px 15px #cfcfcfdb;
+}
+

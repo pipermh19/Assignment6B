@@ -1,0 +1,86 @@
+/* Styling for Contact Page*/
+#homePageBannerImg{
+    width: 100%;
+}
+/* banner styling */
+#contactBanner-desktop{
+    align-items: center;
+    background-image: url("../images/contact_cinnimon.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 60vh;
+    width: 100%;
+}
+#contactTitleContainer{
+    width: 100%;
+    height: 30%;
+}
+#contactTitle{
+    display: flex;
+    width: 30%;
+    height: 100%;
+    background-color: #ffffffad;
+}
+#contactTitleWord{
+    margin: auto;
+}
+
+/* main content */
+article{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+/* horizontally justifies content */
+#contactPageContent{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+/* main image positioned left */
+#imageContainer{
+    display: flex;
+    height: auto;
+    justify-content: center;
+    margin-right: 2rem;
+    width: 50%;
+}
+/* Map */
+#homepageImage{
+    width: 60%;
+}
+/* Form stlying */
+#contactVerbageContainer{
+    display: flex;
+    justify-content: center;
+    margin-left: 2rem;
+    width: 50%;
+}
+#homePageTitle {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+#positionContainer{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    width: 60%;
+}
+#submitButtonContainer{
+    width: 100%;
+}
+#contactSubmit{
+    width: 100%;
+    background-color: #588e9a;
+    color: #ffffff;
+}
+#contactSubmit:hover{
+    background-color: #32606b;
+    color: #ffffff;
+    cursor: pointer;
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bun Bun Bake Shop</title>
+    <link rel="icon" type="image/png" href="images/favicon.png"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/mainStructure.css">
+    <link rel="stylesheet" href="CSS/contact.css" class="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Top Navigation -->
+<div id="topNav-desktop">
+    <div id="topNavContent">
+        <div id="topNavLogo">
+            <a href="index.html" class="topNavLink" id="logo">
+                <img src="images/logoCupcake.png" alt="Image of cupcake" id="websiteLogo">
+                BUN BUN BAKE SHOP
+            </a>
+        </div>
+        <div id="topNavLinks">
+            <a href="index.html" class="topNavLink" id="homePage">HOME</a>
+            <a href="#" class="topNavLink active" id="contactUs">CONTACT US</a>
+            <li class="shopDropDown topNavLink">
+                <a href="productListPage.html" class="topNavLink dropDownBtn" id="shop">SHOP</a>
+                <div class="shopCategories">
+                    <a href="original.html">ORIGINAL</a>
+                    <a href="originalGF.html">ORIGINAL GF</a>
+                    <a href="blackberry.html">BLACKBERRY</a>
+                    <a href="caramel.html">CARAMEL PECAN</a>
+                    <a href="pumpkin.html">PUMPKIN SPICE</a>
+                    <a href="walnut.html">WALNUT</a>
+                </div>
+            </li>
+            <a href="shoppingBag.html" class="topNavLink" id="cart"><i class="fas fa-shopping-cart"></i>
+                <div id="cartNumber"></div>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Homepage Banner -->
+<div id="contactBanner-desktop">
+    <div id="contactTitleContainer">
+        <div id="contactTitle">
+            <h1 id="contactTitleWord">Let's Connect</h1>
+        </div>
+    </div>
+</div>
+<!-- Homepage Body -->
+<article id="contactPageMainBody">
+    <div id="contactPageContent">
+
+        <!-- Text Container -->
+        <div id="contactVerbageContainer">
+            <div id="positionContainer">
+                <!-- Form to submit contact info and message -->
+                <form>
+                    <div id="nameDiv">
+                        <div class="form-group">
+                            <label for="firstNameInput">First name</label>
+                            <input type="text" class="form-control" id="firstNameInput" placeholder="Enter first name">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastNameInput">First name</label>
+                            <input type="text" class="form-control" id="lastNameInput" placeholder="Enter last name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Email address</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter email here">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Message</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter message here"></textarea>
+                    </div>
+                    <div id="submitButtonContainer">
+                        <button type="submit" class="btn isDisabled" id="contactSubmit" disabled >Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Image Container -->
+        <div id="imageContainer">
+            <img src="images/mapImage.jpg" alt="Map" id="homepageImage">
+        </div>
+    </div>
+</article>
+<!-- Bottom Nav -->
+<div id="bottomNav">
+    <div id="btmNavCredit">
+        <div class="bottomNavContainer" id="photoCred">
+            <p id="photoCredWords">Photos by Lum3n, Maddison, Karolina, Nick from Pexels </p>
+        </div>
+    </div>
+
+    <div id="btmNavMenu">
+        <div class="bottomNavContainer" id="bottomMain">
+            <a href="index.html" class="bottomLink" id="homePageBottom">Home</a>
+            <a href="productListPage.html" class="bottomLink active" id="shopBottom">Shop</a>
+        </div>
+        <!-- Bottom nav product list -->
+        <div class="bottomNavContainer" id="products">
+            <a href="original.html" class="bottomLink bottomNavProd" id="productOriginalBottom">Original</a>
+            <a href="originalGF.html" class="bottomLink bottomNavProd" id="productGFBottom">Original GF</a>
+            <a href="blackberry.html" class="bottomLink bottomNavProd" id="productBBBottom">Blackberry</a>
+            <a href="caramel.html" class="bottomLink bottomNavProd" id="productCPBottom">Caramel Pecan</a>
+            <a href="pumpkin.html" class="bottomLink bottomNavProd" id="productPSBottom">Pumpkin Spice</a>
+            <a href="walnut.html" class="bottomLink bottomNavProd" id="productWBottom">Walnut</a>
+        </div>
+    </div>
+</div>
+
+<!-- JS Libraries -->
+</body>
+<script src="https://use.fontawesome.com/releases/v5.15.0/js/all.js" data-auto-replace-svg="nest"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="generic.js"></script>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bun Bun Bake Shop</title>
+    <link rel="icon" type="image/png" href="images/favicon.png"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/mainStructure.css">
+    <link rel="stylesheet" href="CSS/productStyling.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Top Navigation -->
+<div id="topNav-desktop">
+    <div id="topNavContent">
+        <div id="topNavLogo">
+            <a href="index.html" class="topNavLink" id="logo">
+                <img src="images/logoCupcake.png" alt="Image of cupcake" id="websiteLogo">
+                BUN BUN BAKE SHOP
+            </a>
+        </div>
+        <div id="topNavLinks">
+            <a href="index.html" class="topNavLink" id="homePage">HOME</a>
+            <a href="contact.html" class="topNavLink" id="contactUs">CONTACT US</a>
+            <li class="shopDropDown topNavLink">
+                <a href="./productListPage.html" class="topNavLink dropDownBtn" id="shop">SHOP</a>
+                <div class="shopCategories">
+                    <a href="#">ORIGINAL</a>
+                    <a href="originalGF.html">ORIGINAL GF</a>
+                    <a href="blackberry.html">BLACKBERRY</a>
+                    <a href="caramel.html">CARAMEL PECAN</a>
+                    <a href="pumpkin.html">PUMPKIN SPICE</a>
+                    <a href="walnut.html">WALNUT</a>
+                </div>
+            </li>
+            <a href="shoppingBag.html" class="topNavLink" id="cart"><i class="fas fa-shopping-cart"></i>
+                <div id="cartNumber"></div>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Original Page Banner -->
+<div class="productBanner-desktop" id="originalBanner">
+    <div class="productTitleContainer">
+    </div>
+</div>
+<!-- Original Page Body -->
+<article class="productBody">
+    <div class="alert alert-danger none" role="alert">
+        <p id="alertMessage"></p>
+    </div>
+    <div class="alert alert-success none" role="alert">
+        <p id="cartMessage"></p>
+    </div>
+    <div class="productContent">
+        <!-- Image Container -->
+        <div class="productImageContainer">
+            <div class="productImagesPositionContainer">
+                <div class="mainImgContainer">
+                    <img src="images/original2.jpg" alt="Image of cinnamon rolls" class="productImage">
+                </div>
+                <!--Additional Mini Images-->
+                <div class="additionImgContainer">
+                    <div class="positionSmallImage">
+                        <img src="images/originalMini1.jpg" alt="Image of roll 1" class="miniImage" id="originalImage2">
+                        <img src="images/originalMini2.jpg" alt="Image of roll 2" class="miniImage" id="originalImage3">
+                        <img src="images/originalMini3.jpg" alt="Image of roll 3" class="miniImage" id="originalImage4">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Text Container -->
+        <div class="productVerbageContainer">
+            <div class="productPositionContainer">
+                <h1 class="productTitle">ORIGINAL</h1>
+                <p class="productVerbage">
+                    Cinnamon wrapped in our original smooth, tender dough.
+                </p>
+                <h5 class="ingredientsLabel">Ingredients</h5>
+                <p>
+                    all purpose flour, sugar, canola oil, milk, eggs, baking soda, salt, vanilla extract, powder sugar, butter
+                </p>
+                <!--Form that captures order-->
+                <form onsubmit="return false;">
+                    <label for="glazeType" class="inputLabel" id="glazeLabel">Glaze</label>
+                    <!--Glaze Values-->
+                    <div id="glazePositionContainer">
+                        <select name="glazeType" id="glazeType">
+                            <option value="Plain">Plain</option>
+                            <option value="Sugar">Sugar Milk</option>
+                            <option value="Vanilla">Vanilla Milk</option>
+                            <option value="Chocolate">Double Chocolate</option>
+                        </select>
+                    </div>
+                    <!--Quantity Values-->
+                    <label for="pastryQty" class="inputLabel" id="pastryQtyLabel">Quantity</label>
+                    <div id="qtyPositionContainer">
+                        <select name="pastryQty" id="pastryQty">
+                            <option value="" disabled selected>Select quantity...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                        <button class="grow" id="qtySubmitButton"> ADD TO CART</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</article>
+<!-- Bottom Nav -->
+<div id="bottomNav">
+    <!--Photo Credit-->
+    <div id="btmNavCredit">
+        <div class="bottomNavContainer" id="photoCred">
+            <p id="photoCredWords">Photos by Lum3n, Maddison, Karolina, Nick from Pexels </p>
+        </div>
+    </div>
+    <!--Bottom Nav-->
+    <div id="btmNavMenu">
+        <div class="bottomNavContainer" id="bottomMain">
+            <a href="index.html" class="bottomLink" id="homePageBottom">Home</a>
+            <a href="productListPage.html" class="bottomLink active" id="shopBottom">Shop</a>
+        </div>
+        <!-- Bottom nav product list -->
+        <div class="bottomNavContainer" id="products">
+            <a href="#" class="bottomLink bottomNavProd" id="productOriginalBottom">Original</a>
+            <a href="originalGF.html" class="bottomLink bottomNavProd" id="productGFBottom">Original GF</a>
+            <a href="blackberry.html" class="bottomLink bottomNavProd" id="productBBBottom">Blackberry</a>
+            <a href="caramel.html" class="bottomLink bottomNavProd" id="productCPBottom">Caramel Pecan</a>
+            <a href="pumpkin.html" class="bottomLink bottomNavProd" id="productPSBottom">Pumpkin Spice</a>
+            <a href="walnut.html" class="bottomLink bottomNavProd" id="productWBottom">Walnut</a>
+        </div>
+
+    </div>
+</div>
+
+<!--JS Libraries-->
+</body>
+<script src="https://use.fontawesome.com/releases/v5.15.0/js/all.js" data-auto-replace-svg="nest"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="detailPage.js"></script>
+</html>

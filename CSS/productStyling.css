@@ -1,0 +1,139 @@
+/* Universal styling for all product pages */
+
+/* top banner */
+.productBanner-desktop{
+    display: flex;
+    align-items: center;
+    height: 60vh;
+    justify-content: flex-end;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+}
+/* original top banner sets img */
+#originalBanner{
+    background-image: url("../images/originalBanner.jpg");
+}
+/* original top banner sets img */
+#GFBanner{
+    background-image: url("../images/originalGFBanner.jpg");
+}
+/* main body container for product */
+.productContent{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+/* main image container for product */
+.productImageContainer{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: flex-end;
+    margin-right: 2rem;
+    width: 50%;
+}
+.productImage {
+    box-shadow: 5px 8px 9px #e8e8e8a1;
+    width: 40%;
+}
+.additionImgContainer{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin: auto;
+}
+.productImagesPositionContainer{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+.mainImgContainer{
+    display: flex;
+    justify-content: flex-end;
+}
+/* container for small images of product */
+.positionSmallImage{
+    display: flex;
+    margin-top: 1rem;
+    justify-content: space-between;
+    width: 40%;
+}
+/* small images sizing */
+.miniImage{
+    box-shadow: 5px 8px 9px #e8e8e8a1;
+    width: 30%;
+}
+#originalImage2{
+    margin-left: 0;
+}
+#originalImage4{
+    margin-right: 0;
+}
+/* written content container */
+.productVerbageContainer{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 2rem;
+    width: 50%;
+}
+.ingredientsLabel{
+    margin-bottom: 0;
+}
+.productTitle{
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.productPositionContainer{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+/* input label */
+.inputLabel{
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+#qtyPositionContainer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+/* select input */
+select{
+    font-size: 1rem;
+    width: 40%;
+}
+#glazePositionContainer{
+    margin: 1rem auto;
+}
+#glazeType{
+    height: 32px;
+}
+/* add to cart button */
+#qtySubmitButton{
+    width: 30%;
+    height: 2rem;
+    background-color: #588e9a;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+}
+#qtySubmitButton:hover{
+    background-color: #32606b;
+    color: #ffffff;
+    cursor: pointer;
+}
+.alert.none{
+    display: none;
+}
+
+.alert{
+    display: block;
+    text-align: center;
+}
+
