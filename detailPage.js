@@ -2,8 +2,8 @@ $( document ).ready(function() {
     //variables
     let glazeValue;
     let qty;
-    //let cartValue;
-    //let storageNum;
+    let cartValue;
+    let bagList;
     let cartDisplay;
     let productList;
     let product;
@@ -13,18 +13,21 @@ $( document ).ready(function() {
     let productName;
     let cost;
 
+
     //checks to see if local storage variable exists. If not set to 0;
-    cartDisplay = window.localStorage.getItem('cart');
-    if (cartDisplay){
-        productList = JSON.parse(cartDisplay);
+    bagList = window.localStorage.getItem('cart');
+    cartValue = window.localStorage.getItem('cartQty');
+    if (bagList && cartValue){
+        productList = JSON.parse(bagList);
+        cartValue = parseInt(cartValue);
     } else{
         cartValue = 0;
         productList = [];
         productId = 0;
     }
 
-    //$('#cartNumber').empty();
-    //$('#cartNumber').append(cartDisplay);
+    $('#cartNumber').empty();
+    $('#cartNumber').append(cartValue);
 
     //Array to hold descriptions
     let productDetails = [
@@ -73,15 +76,15 @@ $( document ).ready(function() {
     $('#qtySubmitButton').on('click', function() {
         product = {};
         productName = $(".productTitle").text();
-
+        console.log(qty);
         //checks to see if qty is undefined. If undefined creates an alert.
         if(qty === undefined){
-           /* $('#alertMessage').empty();
+           $('#alertMessage').empty();
             $('.alert-danger').removeClass("none");
             $('#alertMessage').append("Please select a QTY to add")
             setInterval(function () {
                 $('.alert').addClass("none")
-            }, 5000);*/
+            }, 5000);
         }
         //If qty is defined, then adds item to storage. Displays success message.
         else if (qty !== undefined) {
@@ -94,15 +97,13 @@ $( document ).ready(function() {
                 _cost: cost,
                 _image: imageSrc
             };
-            console.log(product);
+            cartValue += qty;
+            console.log(cartValue);
             productList.push(product);
-            console.log(productList);
-            //cartValue += qty;
             storageProductList = JSON.stringify(productList);
-            //console.log("The Cart Value" + cartValue);
             window.localStorage.setItem('cart', storageProductList);
-            //window.localStorage.setItem('cartQty', storageNum);
-            /*$('#cartMessage').empty();
+            window.localStorage.setItem('cartQty', cartValue);
+            $('#cartMessage').empty();
             if (glazeValue == undefined || glazeValue == "Plain") {
                 glazeValue = 'no';
             }
@@ -110,13 +111,13 @@ $( document ).ready(function() {
             $('#cartMessage').append("Success! " + qty + " cinnamon rolls with " + glazeValue + " frosting have been added to your cart")
             setInterval(function () {
                 $('.alert').addClass("none")
-            }, 5000);*/
+            }, 5000);
         }
 
         //Updates cart icon #
-        /*cartDisplay = window.localStorage.getItem('cartQty');
+        cartDisplay = window.localStorage.getItem('cartQty');
         $('#cartNumber').empty();
-        $('#cartNumber').append(cartDisplay);*/
+        $('#cartNumber').append(cartDisplay);
     });
 });
 

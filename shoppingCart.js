@@ -2,22 +2,41 @@ $( document ).ready(function() {
     let shoppingCartItems;
     let productDiv;
     let toDelete;
-    let newShoppingCart = []
+    let newShoppingCart = [];
+    let updatedQty;
+    let total = 0;
+    let cost;
+    let shippingTax = 8;
+    shippingTax = parseInt(shippingTax);
+
 
     shoppingCartItems = window.localStorage.getItem('cart');
-    shoppingCartItems = JSON.parse(shoppingCartItems);
-    newShoppingCart = shoppingCartItems;
+    updatedQty = window.localStorage.getItem('cartQty');
+    if (updatedQty == undefined && shoppingCartItems == undefined){
+        updatedQty = 0;
+        updatedQty = parseInt(updatedQty);
+        shoppingCartItems = [];
+        //window.localStorage.setItem('cartQty', updatedQty);
 
-    function removeItem(array, value){
-        let index = value;
-        if (index > -1){
-            array.splice(index,1);
-        }
-        return array;
+        $('#cartNumber').append(updatedQty);
+    }else if (updatedQty != undefined  && shoppingCartItems != undefined){
+        updatedQty = parseInt(updatedQty);
+        shoppingCartItems = JSON.parse(shoppingCartItems);
     }
 
+    newShoppingCart = shoppingCartItems;
 
-    $.each(shoppingCartItems, function(key, value){
+    for(let i=0; i<newShoppingCart.length; i++) {
+        cost = newShoppingCart[i]._cost;
+        cost = parseInt(cost);
+        total += cost;
+        console.log(total);
+        $("#subtotalOutput").text("$" + total + ".00");
+        let endTotal = total + shippingTax;
+        $("#totalOutput").text("$" + endTotal);
+    }
+
+        $.each(shoppingCartItems, function(key, value){
         //console.log(value._productGlaze);
         let itemsContainer = $("<div></div>").addClass("itemsContainer").attr("value",key);
         productDiv = $("<div></div>").addClass("itemsPositionContainer")
@@ -44,13 +63,23 @@ $( document ).ready(function() {
         })
 
     $(".deleteButton").on("click", function(){
-        console.log(newShoppingCart);
         toDelete = $(this).attr('value');
-        console.log(toDelete);
 
-        //removeItem(newShoppingCart,toDelete);
+        for(let i=0; i<newShoppingCart.length; i++) {
+            if (i == toDelete){
+                let qtyToDelete = newShoppingCart[i]._qty
+                console.log(updatedQty)
+                console.log(qtyToDelete)
+
+                qtyToDelete = parseInt(qtyToDelete);
+                updatedQty -= qtyToDelete;
+                console.log(updatedQty);
+                window.localStorage.setItem('cartQty', updatedQty);
+            }
+        }
+
         newShoppingCart.splice($.inArray(toDelete,newShoppingCart), 1);
-        console.log(newShoppingCart);
+
         newShoppingCart = JSON.stringify(newShoppingCart);
         window.localStorage.setItem('cart', newShoppingCart);
 
@@ -58,12 +87,6 @@ $( document ).ready(function() {
         window.location.reload();
 
 
-        /*for(let i=0; i<newShoppingCart.length; i++) {
-            if(toDelete == i){
-                newShoppingCart.splice(i);
-                console.log(newShoppingCart);
-            }
-        }*/
 
     });
 
