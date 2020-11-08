@@ -1,4 +1,5 @@
 $( document ).ready(function() {
+    //variables
     let shoppingCartItems;
     let productDiv;
     let toDelete;
@@ -9,15 +10,14 @@ $( document ).ready(function() {
     let shippingTax = 8;
     shippingTax = parseInt(shippingTax);
 
-
+    //Grabs local Storage
     shoppingCartItems = window.localStorage.getItem('cart');
     updatedQty = window.localStorage.getItem('cartQty');
+
     if (updatedQty == undefined && shoppingCartItems == undefined){
         updatedQty = 0;
         updatedQty = parseInt(updatedQty);
         shoppingCartItems = [];
-        //window.localStorage.setItem('cartQty', updatedQty);
-
         $('#cartNumber').append(updatedQty);
     }else if (updatedQty != undefined  && shoppingCartItems != undefined){
         updatedQty = parseInt(updatedQty);
@@ -26,6 +26,7 @@ $( document ).ready(function() {
 
     newShoppingCart = shoppingCartItems;
 
+    //Updates SubTotal and Appends to Div
     for(let i=0; i<newShoppingCart.length; i++) {
         cost = newShoppingCart[i]._cost;
         cost = parseInt(cost);
@@ -36,8 +37,8 @@ $( document ).ready(function() {
         $("#totalOutput").text("$" + endTotal);
     }
 
-        $.each(shoppingCartItems, function(key, value){
-        //console.log(value._productGlaze);
+    //Prints HTML with Values
+    $.each(shoppingCartItems, function(key, value){
         let itemsContainer = $("<div></div>").addClass("itemsContainer").attr("value",key);
         productDiv = $("<div></div>").addClass("itemsPositionContainer")
         let itemDiv = $("<div></div>").addClass("itemDiv")
@@ -61,33 +62,27 @@ $( document ).ready(function() {
         productDiv.append(itemDiv);
         itemsContainer.append(productDiv);
         $(".itemList").append(itemsContainer);
-        })
-
+    })
+    //Removes Product from Local Storage
     $(".deleteButton").on("click", function(){
         toDelete = $(this).attr('value');
-
+        //captures qty to delete from cart display
         for(let i=0; i<newShoppingCart.length; i++) {
-            if (i == toDelete){
+            if (i == toDelete) {
                 let qtyToDelete = newShoppingCart[i]._qty
-                console.log(updatedQty)
-                console.log(qtyToDelete)
-
                 qtyToDelete = parseInt(qtyToDelete);
                 updatedQty -= qtyToDelete;
-                console.log(updatedQty);
                 window.localStorage.setItem('cartQty', updatedQty);
             }
         }
-
+        //Removes Item
         newShoppingCart.splice($.inArray(toDelete,newShoppingCart), 1);
 
+        //updates local storage
         newShoppingCart = JSON.stringify(newShoppingCart);
         window.localStorage.setItem('cart', newShoppingCart);
-
         shoppingCartItems = window.localStorage.getItem('cart');
         window.location.reload();
-
-
 
     });
 
