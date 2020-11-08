@@ -45,7 +45,8 @@ $( document ).ready(function() {
         let img = $("<img>").attr("src",value._image)
         let itemsDetailsDiv = $("<div></div>").addClass("itemDetailsDiv")
         let leftDiv = $("<div></div>").addClass("left")
-        let nameDiv = $("<div></div>").addClass("name").text(value._product);
+        let nameDiv = $("<div></div>").addClass("name").text(value._product + " Bun Bun");
+        let glazeType = $("<div></div>").addClass("glazeType").text(value._productGlaze + " Glaze");
         let cost = $("<div></div>").addClass("cost").text("$4.00 (each)")
         let qty = $("<div></div>").addClass("itemQty").text("QTY: " + value._qty);
         let rightDiv = $("<div></div>").addClass("right")
@@ -53,7 +54,7 @@ $( document ).ready(function() {
         let totalCost = $("<div></div>").addClass("totalCost").append("$" + value._cost)
 
         rightDiv.append(closeIcon, totalCost);
-        leftDiv.append(nameDiv, cost, qty);
+        leftDiv.append(nameDiv, glazeType, cost, qty);
         itemsDetailsDiv.append(leftDiv, rightDiv);
         itemImageDiv.append(img);
         itemDiv.append(itemImageDiv, itemsDetailsDiv)
